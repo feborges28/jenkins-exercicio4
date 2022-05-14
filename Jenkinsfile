@@ -13,7 +13,7 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/feborges28/jenkins-exercicio4'
 
                 // Run Maven on a Unix agent.
-                sh "cd jenkins-exercicio4; mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "cd exercicio4; mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
@@ -23,8 +23,8 @@ pipeline {
                 // If Maven was able to run the tests, even if some of the test
                 // failed, record the test results and archive the jar file.
                 success {
-                    junit '**/jenkins-exercicio4/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'jenkins-exercicio4/target/*.jar'
+                    junit '**/exercicio4/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'exercicio4/target/*.jar'
                 }
             }
         }
