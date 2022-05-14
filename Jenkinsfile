@@ -7,12 +7,10 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'main', url: 'https://github.com/feborges28/jenkins-exercicio4'
-
-                // Run Maven on a Unix agent.
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
