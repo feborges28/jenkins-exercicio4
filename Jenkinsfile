@@ -5,6 +5,10 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "M3"
     }
+    
+    environment {
+        JAVA_HOME = "/opt/java/openjdk"
+    }
 
     stages {
         stage('build') {
