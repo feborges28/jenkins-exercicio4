@@ -13,7 +13,8 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/feborges28/jenkins-exercicio4'
 
                 // Run Maven on a Unix agent.
-                sh "cd exercicio4; mvn -Dmaven.test.failure.ignore=true clean package"
+                sh "cd exercicio4"
+                sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // To run Maven on a Windows agent, use
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
